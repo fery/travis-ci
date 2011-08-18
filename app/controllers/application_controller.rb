@@ -3,7 +3,9 @@ require 'resque_helpers'
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :set_gitsha_header
+  layout :layout?
+
+  before_filter :set_gitsha_header, :set_mobile_cookie
   after_filter  :prepare_unobtrusive_flash
 
   protected
@@ -25,6 +27,20 @@ class ApplicationController < ActionController::Base
 
     def set_gitsha_header
       headers['X-GIT_SHA'] = ENV['GIT_SHA'] if ENV['GIT_SHA']
+    end
+
+    def is_mobile?
+      cookies[:mobile] || request.user_agent =~ /Mobile|webOS/
+    end
+
+  private
+
+    def layout?
+      is_mobile? ? 'mobile' : 'application'
+    end
+
+    def set_mobile_cookie
+      cookies[:mobile] = params[:mobile] if params[:mobile]
     end
 
 end

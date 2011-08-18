@@ -13,8 +13,17 @@ javascripts:
     - public/javascripts/application.js
     - public/javascripts/lib/**/*.js
     - public/javascripts/app/**/*.js
+  travis_mobile:
+    - public/javascripts/mobile/lib/zepto.js # Needed to be compiled before backbone
+    - public/javascripts/mobile/lib/underscore.js # Needed to be compiled before backbone
+    - public/javascripts/mobile/lib/*.js
+    - public/javascripts/mobile/application.js
+    - public/javascripts/mobile/app/models/*.js
+    - public/javascripts/mobile/app/**/*.js
+    - public/javascripts/mobile/app/templates/**/*.ms
   user_profile:
     - public/javascripts/user_profile_page.js
+
   templates:
     - public/javascripts/app/templates/**/*.ms
   jasmine:

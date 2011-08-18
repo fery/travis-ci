@@ -1,0 +1,77 @@
+@import "mobile/reset.scss";
+
+#top {
+  display: block;
+  float: left;
+  clear: both;
+  background: url(/images/layout/bg-top.png) repeat-x;
+  height: 40px;
+  width: 100%;
+  top: 0px;
+  z-index: 11;
+  line-height: 40px;
+  background: url(/images/layout/bg-top.png) repeat-x;
+
+  h1 {
+    float: left;
+    width: 73px;
+    height: 30px;
+    margin: 4px 0 0 22px;
+    text-indent: -99px;
+    overflow: hidden;
+    color: #D52818;
+    font-size: 24px;
+    background: url(/images/logo.png) no-repeat;
+  }
+
+  #navigation {
+    float: left;
+    margin-left: 40px;
+    list-style-type: none;
+    .current { background-color: black; }
+    li {
+      float: left;
+      a {
+        display: block;
+        padding: 0 15px;
+      }
+    }
+  }
+
+  a { color: #CCC; }
+}
+
+#main { clear: both; }
+
+.repository-list {
+  li {
+    position: relative;
+    padding: 15px 25px 15px 45px !important;
+    border-bottom: 1px solid #CCC;
+    font-size: 16px;
+    background-position: 24px 16px;
+    background-repeat: no-repeat;
+    .summary {
+      margin: 5px 0 0 0;
+      font-size: 0.75em;
+      color: #666;
+    }
+    .build { float: right }
+    &.red {
+      background-image: url(/images/icons/status.red.png);
+      color: #C00;
+      padding-left: 20px;
+      background-repeat: no-repeat;
+      a { color: #C00; }
+    }
+    &.green {
+      background-image: url(/images/icons/status.green.png);
+      color: green;
+      padding-left: 20px;
+      background-repeat: no-repeat;
+      a { color: green }
+    }
+  }
+
+  li:nth-child(even) { background-color: #F6F6F6; }
+}

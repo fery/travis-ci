@@ -1,0 +1,32 @@
+/* mini-reset */
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 1em;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: Helvetica, Arial, sans-serif;
+
+  a { text-decoration: none; }
+
+  div, span,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address,
+  em, img, strong, dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+  ol, ul {
+    list-style: none;
+  }
+}
